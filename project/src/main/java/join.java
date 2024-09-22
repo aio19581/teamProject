@@ -1,5 +1,6 @@
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,8 +37,10 @@ public class join extends HttpServlet{
 		String email = email1 +"@"+email2;
 		String address = zipNo + " "+Addr1+addrDetail+Addr2;
 		member m = new member("user",memberId,memberPw,name,birth,phoneNumber,email,address,nickName);
-		System.out.println(m.toString());
-		
+		//DB에 전달하는 코드 넣기
+
+		RequestDispatcher view = req.getRequestDispatcher("welcome.jsp");
+		view.forward(req, resp);
 	
 	}
 	
