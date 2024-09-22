@@ -154,10 +154,11 @@ function regexCheck(){
 			</div>
 		</form>
 		
-		<div class="d-grid mx-auto" >
-			<button type="submit" class="btn btn-primary btn-lg" id="join">회원가입</button>
-		</div>
-
+		<form action="" method="post">
+			<div class="d-grid mx-auto" >
+				<button type="submit" class="btn btn-primary btn-lg" id="join">회원가입</button>
+			</div>
+		</form>
 	</div>
 
 	<!-- 푸터 -->
