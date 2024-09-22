@@ -15,22 +15,29 @@
 %>
 </head>
 <script language="javascript">
-
-function init(){
-	var url = location.href;
-	var confmKey = "U01TX0FVVEgyMDI0MDkxNzIzNTIyMDExNTA4OTg=";
-	var resultType = "4";
-	var inputYn= "<%=inputYn%>";
-	if(inputYn != "Y"){
-		document.form.confmKey.value = confmKey;
-		document.form.returnUrl.value = url;
-		document.form.resultType.value = resultType;
-		document.form.action="https://business.juso.go.kr/addrlink/addrLinkUrl.do"; 
-		document.form.submit();
-	}else{
-		opener.jusoCallBack("<%=roadFullAddr%>","<%=roadAddrPart1%>","<%=addrDetail%>","<%=zipNo%>","<%=roadAddrPart2%>");
-		window.close();
-	}
+function init() {
+    var url = location.href;
+    var confmKey = "U01TX0FVVEgyMDI0MDkxNzIzNTIyMDExNTA4OTg=";
+    var resultType = "4";
+    var inputYn = "<%= inputYn %>";
+    if (inputYn != "Y") {
+        document.getElementById('form').confmKey.value = confmKey;
+        document.getElementById('form').returnUrl.value = url;
+        document.getElementById('form').resultType.value = resultType;
+        document.getElementById('form').action = "https://business.juso.go.kr/addrlink/addrLinkUrl.do";
+        document.getElementById('form').submit();
+    } else {
+        if (window.opener && !window.opener.closed) {
+            opener.jusoCallBack(
+                "<%= roadFullAddr %>", 
+                "<%= roadAddrPart1 %>", 
+                "<%= addrDetail %>", 
+                "<%= zipNo %>", 
+                "<%= roadAddrPart2 %>"
+            );
+            window.close();  
+        }
+    }
 }
 </script>
 <body onload="init();">

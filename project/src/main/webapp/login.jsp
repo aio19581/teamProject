@@ -58,7 +58,7 @@ function pwEmptyCheck(){
 		
 		<!-- id 입력 -->
 		<div class="form-floating mb-3">
-		  <input type="text" class="form-control" id="memberId" placeholder="ID">
+		  <input type="text" class="form-control"  id="memberId" placeholder="ID">
 		  <label for="floatingInput">ID</label>
 		  <div id="idempty" style="margin : 0px; color:red;"></div>
 		</div>
