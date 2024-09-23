@@ -54,24 +54,6 @@
 						  	<button type="button" class="btn-close" aria-label="Close"></button>
 						  </div>
 						</div>
-						<div class="card position-relative" >
-						  <img src="image/noimage.png" class="card-img-top" alt="...">
-						  <div class="card-body">
-						    <p class="card-text">글제목</p>
-						  </div>
-						  <div class="position-absolute top-0 end-0">
-						  	<button type="button" class="btn-close" aria-label="Close"></button>
-						  </div>
-						</div>
-						<div class="card position-relative" >
-						  <img src="image/noimage.png" class="card-img-top" alt="...">
-						  <div class="card-body">
-						    <p class="card-text">글제목</p>
-						  </div>
-						  <div class="position-absolute top-0 end-0">
-						  	<button type="button" class="btn-close" aria-label="Close"></button>
-						  </div>
-						</div>
 					</div>
 				</div>
 				<div id="text">

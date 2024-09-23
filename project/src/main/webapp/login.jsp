@@ -85,7 +85,7 @@ function pwEmptyCheck(){
 		<!-- 다른 페이지로 이동 -->
 		<div class="d-flex justify-content-between">
 			<a href="">아이디/비밀번호 찾기</a>
-			<a href="">회원가입</a>
+			<a href="join.jsp">회원가입</a>
 		</div>
 		
 		<!-- SNS로그인 -->
@@ -98,8 +98,7 @@ function pwEmptyCheck(){
 			<img src="image/naverlogo.png" ondragstart='return false' /> 
 			<span>네이버 로그인</span>
 		</div>
-		
-
+	
 	</div>
 	
 	<!-- 푸터 -->

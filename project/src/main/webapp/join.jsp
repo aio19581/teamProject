@@ -78,7 +78,8 @@ function regexCheck(){
 	<div id="header"></div> 
 	
 	<div id="content">
-	<form id="joinInfo" name="joinInfo" action="/project/join" method="post"></form>
+	<form id="joinInfo" name="joinInfo" action="/project/member" method="post"></form>
+		<input type="hidden" name="command" value="JOIN" form="joinInfo"/>
 		<label for="memberId">아이디</label> 
 		<div class="d-flex justify-content-between">
 		    <input type="text" id="memberId" name="memberId" form="joinInfo">
