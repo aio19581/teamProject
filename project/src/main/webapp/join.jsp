@@ -26,10 +26,10 @@ function goPopup(){
 }
 
 function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,zipNo,roadAddrPart2){
-	document.form.roadAddrPart1.value = roadAddrPart1;
-	document.form.addrDetail.value = addrDetail;
-	document.form.zipNo.value = zipNo;
-	document.form.roadAddrPart2.value = roadAddrPart2;
+	document.getElementById('roadAddrPart1').value = roadAddrPart1;
+    document.getElementById('addrDetail').value = addrDetail;
+    document.getElementById('zipNo').value = zipNo;
+    document.getElementById('roadAddrPart2').value = roadAddrPart2;
 }
 
 //유효성 검사
@@ -79,15 +79,16 @@ function regexCheck(){
 	<div id="header"></div> 
 	
 	<div id="content">
+	<form id="joinInfo" name="joinInfo" action="/project/join" method="post"></form>
 		<label for="memberId">아이디</label> 
 		<div class="d-flex justify-content-between">
-		    <input type="text" id="memberId" >
+		    <input type="text" id="memberId" name="memberId" form="joinInfo">
 			<button type="submit" class="btn btn-outline-primary btn-sm">중복확인</button>
 		</div >
 		
 		<label for="memberPw">비밀번호</label> 
 		<div class="d-flex align-items-center"">
-		    <input type="password" id="memberPw" aria-describedby="passwordhelp">
+		    <input type="password" name="memberPw" aria-describedby="passwordhelp" form="joinInfo">
 		</div >
 		<div id="passwordhelp" class="form-text">
 		문자, 숫자, 특수문자 포함 8~20자 입력해주세요
@@ -95,18 +96,18 @@ function regexCheck(){
 		
 		<label for="memberPwCheck">비밀번호 확인</label> 
 		<div class="d-flex align-items-center" >
-		    <input type="password" id="memberPwCheck" aria-describedby="pwcheckhelp">
+		    <input type="password" name="memberPwCheck" aria-describedby="pwcheckhelp" >
 		</div >
 		<div id="pwcheckhelp" class="form-text"></div>
 		
 		<label for="name">이름</label>
 		<div class="d-flex align-items-center">
-		    <input type="text" id="name" >
+		    <input type="text" name="name" form="joinInfo">
 		</div >
 		
 		<label for="birth">생년월일</label>
 		<div class="d-flex align-items-center">
-		    <input type="number" id="birth" aria-describedby="birthhelp" value="">
+		    <input type="number" name="birth" aria-describedby="birthhelp" value="" form="joinInfo">
 		</div >
 		<div id="birthhelp" class="form-text">
 		생년월일 8자리 입력해주세요
@@ -114,7 +115,7 @@ function regexCheck(){
 		
 		<label for="phoneNumber">휴대전화번호</label> 
 		<div class="d-flex align-items-center">
-		    <input type="number" id="phoneNumber" aria-describedby="phonenumberhelp">
+		    <input type="number" name="phoneNumber" aria-describedby="phonenumberhelp" form="joinInfo">
 		</div >
 		<div id="phonenumberhelp" class="form-text">
 		- 제외 11자리 입력해주세요
@@ -122,8 +123,8 @@ function regexCheck(){
 		
 		<label for="email">이메일</label> 
 		<div class="d-flex justify-content-between">
-		    <input type="text" id="email" style="border:none;"> @ 
-		    <select class="form-select form-select-sm" >
+		    <input type="text" name="email" style="border:none;" form="joinInfo"> @ 
+		    <select class="form-select form-select-sm" name="email2" form="joinInfo">
 		    	<option hidden="hidden">이메일선택</option>
 		    	<option value="naver.com">naver.com</option>
 		    	<option value="daum.net">daum.net</option>
@@ -134,7 +135,7 @@ function regexCheck(){
 				
 		<label for="nickName">닉네임</label> 
 		<div class="d-flex justify-content-between">
-		    <input type="text" id="nickName" >
+		    <input type="text" id="nickName" name="nickName" form="joinInfo">
 			<button type="submit" class="btn btn-outline-primary btn-sm">중복확인</button>
 		</div >
 		
@@ -142,22 +143,22 @@ function regexCheck(){
 			<label for="address">주소</label> 
 			<div class="d-flex justify-content-between">
 				<input type="hidden" id="confmKey" name="confmKey" value=""  >
-				<input type="text" id="zipNo" name="zipNo" readonly="readonly" placeholder="우편번호">
+				<input type="text" id="zipNo" name="zipNo" readonly="readonly" placeholder="우편번호" form="joinInfo">
 				<input type="button" class="btn btn-outline-primary btn-sm"  id="address" value="주소검색">
 			</div>
 			<div class="d-flex align-items-center">
-		    	<input type="text" id="roadAddrPart1" readonly="readonly"  placeholder="주소" >
+		    	<input type="text" id="roadAddrPart1" name="roadAddrPart1" readonly="readonly"  placeholder="주소" form="joinInfo">
 			</div >
 			<div class="d-flex justify-content-start">
-		    	<input type="text" id="addrDetail" value="" readonly="readonly"  placeholder="상세주소" style="width:40%;" >
-		    	<input type="text" id="roadAddrPart2" value="" readonly="readonly"  >
+		    	<input type="text" id="addrDetail" name="addrDetail" value="" readonly="readonly"  placeholder="상세주소" style="width:40%;" form="joinInfo">
+		    	<input type="text" id="roadAddrPart2" name="roadAddrPart2" value="" readonly="readonly"  form="joinInfo">
 			</div>
 		</form>
 		
 		<div class="d-grid mx-auto" >
-			<button type="submit" class="btn btn-primary btn-lg" id="join">회원가입</button>
+			<button type="submit" class="btn btn-primary btn-lg" id="join" form="joinInfo">회원가입</button>
 		</div>
-
+		
 	</div>
 
 	<!-- 푸터 -->
