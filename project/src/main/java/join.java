@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import member.member;
+import model.member;
 
 @WebServlet("/join")
 public class join extends HttpServlet{
